@@ -6,6 +6,135 @@ import org.junit.Test;
 public class TheatreTest {
 
 
+    @Test(expected = IllegalArgumentException.class)
+    public void testCalculateDiscountIEC1(){
+    int numTickets = -2;
+    Theatre.calculateDiscount(numTickets);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testCalculateDiscountIEC2(){
+        int numTickets = 500;
+        Theatre.calculateDiscount(numTickets);
+    }
+
+    @Test
+    public void testCalculateDiscountLC1(){
+        int numTickets = 2;
+        int expected = 0;
+        int actual = Theatre.calculateDiscount(numTickets);
+        Assert.assertEquals(expected, actual);
+    }
+    @Test
+    public void testCalculateDiscountLC2(){
+        int numTickets = 7;
+        int expected = 5;
+        int actual = Theatre.calculateDiscount(numTickets);
+        Assert.assertEquals(expected, actual);
+    }
+    @Test
+    public void testCalculateDiscountLC3(){
+        int numTickets = 16;
+        int expected = 10;
+        int actual = Theatre.calculateDiscount(numTickets);
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testCalculateDiscountBV1(){
+        int numTickets = -1;
+        Theatre.calculateDiscount(numTickets);
+    }
+
+    // Nula nije uvrstena u uslov a treba da bude
+    @Test(expected = IllegalArgumentException.class)
+    public void testCalculateDiscountBV2(){
+        int numTickets = 0;
+        Theatre.calculateDiscount(numTickets);
+    }
+
+    @Test
+    public void testCalculateDiscountBV3(){
+        int numTickets = 1;
+        int expected = 0;
+        int actual = Theatre.calculateDiscount(numTickets);
+        Assert.assertEquals(expected, actual);
+    }
+    @Test
+    public void testCalculateDiscountBV4(){
+        int numTickets = 4;
+        int expected = 0;
+        int actual = Theatre.calculateDiscount(numTickets);
+        Assert.assertEquals(expected, actual);
+    }
+    @Test
+    public void testCalculateDiscountBV5(){
+        int numTickets = 5;
+        int expected = 0;
+        int actual = Theatre.calculateDiscount(numTickets);
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testCalculateDiscountBV6(){
+        int numTickets = 6;
+        int expected = 5;
+        int actual = Theatre.calculateDiscount(numTickets);
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testCalculateDiscountBV7(){
+        int numTickets = 9;
+        int expected = 5;
+        int actual = Theatre.calculateDiscount(numTickets);
+        Assert.assertEquals(expected, actual);
+    }
+
+
+    // Treba da uvrsti i vrednost 10
+    @Test
+    public void testCalculateDiscountBV8(){
+        int numTickets = 10;
+        int expected = 5;
+        int actual = Theatre.calculateDiscount(numTickets);
+        Assert.assertEquals(expected, actual);
+    }
+    @Test
+    public void testCalculateDiscountBV9(){
+        int numTickets = 11;
+        int expected = 10;
+        int actual = Theatre.calculateDiscount(numTickets);
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testCalculateDiscountBV10(){
+        int numTickets = 249;
+        int expected = 10;
+        int actual = Theatre.calculateDiscount(numTickets);
+        Assert.assertEquals(expected, actual);
+    }
+    @Test
+    public void testCalculateDiscountBV11(){
+        int numTickets = 250;
+        int expected = 10;
+        int actual = Theatre.calculateDiscount(numTickets);
+        Assert.assertEquals(expected, actual);
+    }
+    @Test(expected = IllegalArgumentException.class)
+    public void testCalculateDiscountBV12(){
+        int numTickets = 251;
+        Theatre.calculateDiscount(numTickets);
+
+    }
+
+
+
+
+
+
+
     @Test
     public void testGetPriceA(){
         char input = 'a';

@@ -14,9 +14,6 @@ public class Theatre {
 
      */
 
-
-
-
     public static int calculateDiscount(int numTickets) throws  IllegalArgumentException{
         int discount;
         if (numTickets < 0 || numTickets > capacity) throw  new IllegalArgumentException("Must be beetwen 1 and 250");
